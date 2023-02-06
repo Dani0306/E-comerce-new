@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+
+
+  * {
+    @apply !scrollbar-hide;
+  }
+
+  .navbar-main-design {
+    @apply w-full h-[8vh] bg-white flex items-center justify-center fixed z-20 border-b border-[#BDC3C7];
+  }
+
+  .navbar-div-design {
+    @apply w-full h-[8vh] max-w-[1650px] flex items-center justify-between px-4 bg-white;
+  }
+
+  .navbar-second-div {
+    @apply w-max h-full flex items-center justify-center;
+  }
+
+  .nav-li {
+    @apply transition-all duration-1000 w-full h-[65px] flex items-center justify-between pl-7 pr-6 lg:!opacity-100 lg:h-full mx-[-6px] relative;
+  }
+
+  .navbar-ul {
+    @apply h-max pt-4 pb-6 transition-all duration-500 w-full absolute left-0 bg-white flex flex-col z-[-1] lg:p-0 lg:h-full lg:relative lg:left-auto lg:!top-0 lg:flex-row lg:z-10;
+  }
+
+  .nav-sublink{
+    @apply h-[40px] pl-[80px] flex items-center justify-start text-[.9rem] w-full transition-all duration-500;
+  }
+
+
+  .swiper-circle{
+    @apply bg-[#03B4B4] rounded-full w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] transition-all duration-500 opacity-60;
+  }
+
+  .footer-item {
+    @apply text-[#B2BABB] hover:text-[#D5DBDB] font-light text-sm my-2 cursor-pointer;
+  }
+
+}
+
+#modal {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.93);
+  z-index: 10;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Edu VIC WA NT Beginner', cursive;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+  font-weight: bold;
+}
+
+/* ANIMATION CLASSES */
+
+
+.first {
+  animation: first .5s ease;
+}
+
+.second {
+  animation: second .5s ease;
+}
+
+/* ANIMATIONS */
+
+@keyframes first {
+  from {
+    transform: rotate(0deg);
+  } 
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+
+@keyframes second {
+  from {
+    transform: rotate(360deg);
+  } 
+  to {
+    transform: rotate(0deg)
+  }
+}
+
+/* MODAL STYLES */
+
+.modalView{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+@media only screen and (min-width: 900px){
+  .modalView {
+    width: 65%;
+    height: 65%;
+  }
+}
+
+.modalContainer {
+  animation: fadeIn .3s ease forwards;
+}
+
+.fadeOut{
+  animation: fadeOut .3s ease;
+}
+
+
+@keyframes fadeIn{
+  from {
+      transform: scale(0)
+  }
+  to{
+      transform: scale(1)
+  }
+}
+
+
+@keyframes fadeOut{
+  from {
+      transform: scale(1)
+  }
+  to{
+      transform: scale(0)
+  }
+}
+
+
+.register-modal {
+  background: rgba(255, 255, 255, .5);
+}
+
+.register-title {
+  font-family: sans-serif;
+}
+
+
+/* CART GRID */
+
+
+.grilla {
+  display: grid;
+  grid-template-rows: 93% 7%;
+}
+
+
+/* CARDS CONTAINER */
+
+
+.cards-container {
+  padding: 10px;
+  display: grid;
+  grid-gap: 60px 35px;
+  padding-top: 60px;
+  grid-template-rows: repeat(auto-fill, 400px);
+}
+
+@media only screen and (max-width: 700px){
+  .cards-container{
+   grid-template-columns: repeat(1, 1fr);
+  }
+ }
+
+ @media only screen and (min-width: 701px){
+  .cards-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+ }
+
+ @media only screen and (min-width: 1050px){
+  .cards-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+ }
+
+ @media only screen and (min-width: 1600px){
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+ }
+
+ /* PRODUCT CARD */
+
+.product-card{
+  box-shadow: -3px 4px 10px -1px rgba(0,0,0,0.7);
+  -webkit-box-shadow: -3px 4px 10px -1px rgba(0,0,0,0.7);
+  -moz-box-shadow: -3px 4px 10px -1px rgba(0,0,0,0.7);
+}
+
+
+/* CART DESIGN */
+
+
+.cart {
+  grid-template-rows: 94% 6%;
+}
+
+@media only screen and (min-width: 1050px){
+  .cart {
+    grid-template-rows: 90% 10%;
+  }
+ }
+
+
+
+/* FOOTER DESIGN */
+
+
+.footer {
+    display: grid;
+}
+
+
+@media only screen and (max-width: 700px){
+  .footer{
+   grid-template-columns: repeat(1, 1fr);
+  }
+ }
+
+ @media only screen and (min-width: 701px){
+  .footer{
+    grid-template-columns: repeat(2, 1fr);
+  }
+ }
+
+ @media only screen and (min-width: 1050px){
+  .footer{
+    grid-template-columns: repeat(3, 1fr);
+  }
+ }
+
+ @media only screen and (min-width: 1600px){
+  .footer{
+    grid-template-columns: repeat(4, 1fr);
+  }
+ }
